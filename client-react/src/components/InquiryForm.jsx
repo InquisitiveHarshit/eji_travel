@@ -78,7 +78,7 @@ function InquiryForm({ variant = "sidebar" }) {
 
   if (submitted) {
     return (
-      <div className="w-full bg-[#f2f2f2] flex items-center justify-center p-4 sm:p-8 font-['DM_Sans',-apple-system,BlinkMacSystemFont,sans-serif]">
+      <div className="w-full  flex items-center justify-center p-4 sm:p-8 font-['DM_Sans',-apple-system,BlinkMacSystemFont,sans-serif]">
         <div className="bg-white rounded-xl sm:rounded-[16px] shadow-[0_4px_24px_rgba(0,0,0,0.10)] p-5 sm:p-7 w-full max-w-[460px]">
           <div className="text-center py-6 sm:py-8">
             <div className="text-4xl sm:text-5xl mb-3 sm:mb-4">🎉</div>
@@ -98,8 +98,8 @@ function InquiryForm({ variant = "sidebar" }) {
   }
 
   return (
-    <div className="w-full bg-[#f2f2f2] flex items-center justify-center p-4 sm:p-8 font-['DM_Sans',-apple-system,BlinkMacSystemFont,sans-serif]">
-      <div className="bg-white rounded-xl sm:rounded-[16px] shadow-[0_4px_24px_rgba(0,0,0,0.10)] p-5 sm:p-7 w-full max-w-[460px]">
+    <div className="w-full  flex items-center justify-center p-4 sm:p-8 font-['DM_Sans',-apple-system,BlinkMacSystemFont,sans-serif]">
+      <div className="bg-white rounded-xl sm:rounded-[16px] shadow-[0_4px_24px_rgba(255,140,0,0.18)] border border-[rgba(255,140,0,0.6)] p-5 sm:p-7 w-full max-w-[460px]">
         {/* Header */}
         <p className="text-sm sm:text-base font-bold text-[#1a1a1a] mb-2">
           Japan Delights | Group Tour Package
