@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Japan Tour: Osaka to Tokyo & Beyond | EJI Travel</title>
+    <!-- Font & Icons -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Global Reset & Variables — Clean, trustworthy, travel-inspired */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a2e4f;
+            /* deep navy – trust, premium */
+            --accent: #c24a2a;
+            /* vermilion – energy, Japan's torii gates */
+            --gold: #b8914a;
+            /* gold – highlight, luxury */
+            --light-bg: #faf8f5;
+            /* warm white – paper texture feel */
+            --white: #ffffff;
+            --gray-100: #f7f7f7;
+            --gray-600: #5a5a5a;
+            --gray-900: #1e1e1e;
+            --shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.08);
+            --border-radius: 20px;
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--white);
+            color: var(--gray-900);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* typography */
+        h1,
+        h2,
+        h3 {
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .subhead {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: var(--gray-600);
+        }
+
+        /* CTA buttons – conversion focused */
+        .btn {
+            display: inline-block;
+            padding: 16px 32px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-primary {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #a63e22;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 25px rgba(194, 74, 42, 0.25);
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+
+        /* pricing badge */
+        .price-badge {
+            background: white;
+            border-radius: 50px;
+            padding: 8px 20px;
+            display: inline-flex;
+            align-items: baseline;
+            gap: 12px;
+            box-shadow: var(--shadow);
+            margin-top: 20px;
+        }
+
+        .old-price {
+            font-size: 1.1rem;
+            color: var(--gray-600);
+            text-decoration: line-through;
+        }
+
+        .new-price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .discount-badge {
+            background: var(--accent);
+            color: white;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        /* layout helpers */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.9rem;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+        }
+
+        /* hero section */
+        .hero {
+            padding: 40px 0 60px;
+            background: linear-gradient(to bottom, var(--white), var(--light-bg));
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero-image {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 100%;
+            min-height: 340px;
+            background: url('https://images.pexels.com/photos/402028/pexels-photo-402028.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') center/cover no-repeat;
+        }
+
+        /* trust badges */
+        .trust-badges {
+            display: flex;
+            gap: 24px;
+            margin: 24px 0 16px;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            color: var(--gray-600);
+        }
+
+        .trust-item i {
+            color: var(--gold);
+        }
+
+        /* itinerary cards */
+        .section {
+            padding: 70px 0;
+        }
+
+        .section-light {
+            background-color: var(--light-bg);
+        }
+
+        .itinerary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 28px;
+            margin-top: 40px;
+        }
+
+        .day-card {
+            background: white;
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: var(--shadow);
+            transition: all 0.25s ease;
+            border: 1px solid rgba(0, 0, 0, 0.02);
+        }
+
+        .day-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.15);
+        }
+
+        .day-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 18px;
+        }
+
+        .day-number {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            font-weight: 600;
+            padding: 4px 14px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+
+        .day-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        /* feature highlights */
+        .feature-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 28px;
+            margin: 48px 0 24px;
+            justify-content: center;
+        }
+
+        .feature-item {
+            background: white;
+            padding: 24px 20px;
+            border-radius: 20px;
+            flex: 1 1 200px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.02);
+            border: 1px solid #f0f0f0;
+        }
+
+        .feature-item i {
+            font-size: 2.2rem;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        /* pricing section */
+        .pricing-card {
+            background: white;
+            border-radius: 32px;
+            padding: 40px;
+            box-shadow: var(--shadow);
+            border: 1px solid #eaeaea;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .price-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .incl-excl {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-top: 40px;
+        }
+
+        .list-check {
+            list-style: none;
+        }
+
+        .list-check li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: baseline;
+            gap: 10px;
+        }
+
+        .list-check i.fa-check-circle {
+            color: #2e7d32;
+        }
+
+        .list-check i.fa-times-circle {
+            color: #b33f2f;
+        }
+
+        /* lead capture form */
+        .lead-form {
+            background: white;
+            padding: 32px;
+            border-radius: 28px;
+            box-shadow: var(--shadow);
+            border: 1px solid #eaeef2;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 16px 20px;
+            border: 1px solid #d4dce2;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-family: var(--font-sans);
+            background-color: white;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(26, 46, 79, 0.1);
+        }
+
+        .sticky-cta {
+            display: none;
+        }
+
+        @media (max-width: 600px) {
+            .sticky-cta {
+                display: block;
+                position: fixed;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 16px 20px;
+                box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.08);
+                z-index: 100;
+                border-top: 1px solid #eee;
+            }
+        }
+
+        /* footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 32px 0;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO SECTION – high-conversion: clear value prop, price, social proof, CTA -->
+    <div class="hero">
+        <div class="container">
+            <div class="grid-2">
+                <div class="hero-content">
+                    <div class="trust-badges">
+                        <span class="trust-item"><i class="fas fa-star"></i> 4.9 (128 reviews)</span>
+                        <span class="trust-item"><i class="fas fa-shield-alt"></i> Secure Booking</span>
+                        <span class="trust-item"><i class="fas fa-clock"></i> Limited seats</span>
+                    </div>
+                    <h1>Japan Tour Packages Unveiled:<br>Osaka to Tokyo & Beyond</h1>
+                    <p class="subhead" style="margin-top: 20px;">7 days • 2N Osaka • 4N Tokyo • Bullet Train • Mt. Fuji
+                    </p>
+
+                    <!-- Pricing with 24% OFF – prominent -->
+                    <div class="price-badge">
+                        <span class="old-price">₹165,000</span>
+                        <span class="new-price">₹125,000</span>
+                        <span class="discount-badge">24% OFF</span>
+                    </div>
+                    <p style="color: var(--gray-600); margin-top: 8px;">Excluding applicable taxes • per person</p>
+
+                    <div style="display: flex; gap: 16px; margin-top: 32px; flex-wrap: wrap;">
+                        <a href="#inquiry" class="btn btn-secondary"><i class="fas fa-paper-plane"
+                                style="margin-right: 8px;"></i>Send Inquiry</a>
+                        <a href="#booking" class="btn btn-primary"><i class="fas fa-calendar-check"
+                                style="margin-right: 8px;"></i>Book Now – Only 4 Spots Left</a>
+                    </div>
+
+                    <!-- additional micro-text: trust -->
+                    <p style="font-size: 0.8rem; color: #777; margin-top: 24px;"><i class="fas fa-lock"
+                            style="margin-right: 6px;"></i>Easy EMI available • Instant confirmation • Flexible
+                        cancellation</p>
+                </div>
+
+                <!-- Hero Image – evokes emotion: Shinkansen / Mt Fuji / Dotonbori vibe -->
+                <div class="hero-image"
+                    style="background-image: url('https://images.pexels.com/photos/161251/senso-ji-temple-japan-kyoto-landmark-161251.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+                    <!-- overlay subtle gradient for text, but just visual -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ITINERARY HIGHLIGHTS – visual storytelling, each day with best-fit image -->
+    <div class="section">
+        <div class="container">
+            <h2 style="text-align: center; color: var(--primary);">✨ Your Journey — Day by Day</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 20px; color: var(--gray-600);">Authentic
+                experiences, iconic sights, and seamless travel. Every detail crafted.</p>
+
+            <div class="itinerary-grid">
+                <!-- Day 1: Osaka – Dotonbori -->
+                <div class="day-card">
+                    <img src="https://images.pexels.com/photos/5313207/pexels-photo-5313207.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        alt="Dotonbori Osaka at night" loading="lazy">
+                    <span class="day-number">DAY 1</span>
+                    <div class="day-title">Arrival in Osaka – Dotonbori Lights</div>
+                    <p style="color: var(--gray-600);">Konnichiwa! Settle in, then dive into the city of food and neon.
+                        Your first taste of Japan's hospitality.</p>
+                </div>
+                <!-- Day 2: Osaka Castle & Culture -->
+                <div class="day-card">
+                    <img src="https://images.pexels.com/photos/19104729/pexels-photo-19104729.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        alt="Osaka Castle" loading="lazy">
+                    <span class="day-number">DAY 2</span>
+                    <div class="day-title">Osaka Castle & Culinary Walk</div>
+                    <p style="color: var(--gray-600);">Step back in time at the legendary castle, then guided tour
+                        through samurai history and local flavors.</p>
+                </div>
+                <!-- Day 3: Shinkansen to Tokyo -->
+                <div class="day-card">
+                    <img src="https://images.pexels.com/photos/696680/pexels-photo-696680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        alt="Shinkansen bullet train" loading="lazy">
+                    <span class="day-number">DAY 3</span>
+                    <div class="day-title">Bullet Train to Tokyo</div>
+                    <p style="color: var(--gray-600);">Marvel at the Shinkansen—comfort, speed, views. Arrive in Tokyo
+                        where old meets new.</p>
+                </div>
+                <!-- Day 4: Tokyo – Meiji Shrine & Contrasts -->
+                <div class="day-card">
+                    <img src="https://images.pexels.com/photos/2069294/pexels-photo-2069294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        alt="Meiji Shrine Tokyo" loading="lazy">
+                    <span class="day-number">DAY 4</span>
+                    <div class="day-title">Timeless Tokyo: Meiji & Beyond</div>
+                    <p style="color: var(--gray-600);">Luxury guided city tour. Peaceful Meiji Shrine, then the electric
+                        energy of Shibuya.</p>
+                </div>
+                <!-- Day 5: Mt. Fuji & Hakone -->
+                <div class="day-card">
+                    <img src="https://images.pexels.com/photos/3408354/pexels-photo-3408354.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        alt="Mount Fuji" loading="lazy">
+                    <span class="day-number">DAY 5</span>
+                    <div class="day-title">Mt. Fuji & Hakone</div>
+                    <p style="color: var(--gray-600);">Deluxe coach to 5th Station, buffet lunch with sacred peak views.
+                        Japan's natural wonder.</p>
+                </div>
+                <!-- Day 6: Tokyo – Leisure/TeamLab -->
+                <div class="day-card">
+                    <img src="https://images.pexels.com/photos/3581366/pexels-photo-3581366.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        alt="TeamLab Planets digital art" loading="lazy">
+                    <span class="day-number">DAY 6</span>
+                    <div class="day-title">Your Tokyo Discovery</div>
+                    <p style="color: var(--gray-600);">Free day: Ginza luxury, teamLab Planets, or hidden alleys. Your
+                        choice, perfectly free.</p>
+                </div>
+                <!-- Day 7: Farewell -->
+                <div class="day-card">
+                    <img src="https://images.pexels.com/photos/3711776/pexels-photo-3711776.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                        alt="Narita Airport" loading="lazy">
+                    <span class="day-number">DAY 7</span>
+                    <div class="day-title">Sayonara with Memories</div>
+                    <p style="color: var(--gray-600);">Breakfast, transfer to airport. Leave with the heart of Japan,
+                        not just photos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- EXPERIENCE FEATURES / Trust + conversion triggers -->
+    <div class="section-light">
+        <div class="container">
+            <div class="feature-highlights">
+                <div class="feature-item">
+                    <i class="fas fa-train"></i>
+                    <h3>Bullet Train</h3>
+                    <p style="color: #5a5a5a;">Osaka → Tokyo: included</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-hotel"></i>
+                    <h3>Handpicked Hotels</h3>
+                    <p style="color: #5a5a5a;">2N Osaka + 4N Tokyo</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Daily Breakfast</h3>
+                    <p style="color: #5a5a5a;">+ Mt. Fuji buffet lunch</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>Guided Tours</h3>
+                    <p style="color: #5a5a5a;">Osaka Castle, Tokyo, Mt Fuji</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-wifi"></i>
+                    <h3>Pocket WiFi</h3>
+                    <p style="color: #5a5a5a;">Stay connected en-route</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- INCLUSIONS / EXCLUSIONS & PRICE BREAKDOWN (clear policy) -->
+    <div class="section" id="inclusions">
+        <div class="container">
+            <div class="incl-excl">
+                <div style="background: #f3f7fa; padding: 32px; border-radius: 28px;">
+                    <h3 style="font-size: 1.7rem; margin-bottom: 28px; display: flex; gap: 12px;"><i
+                            class="fas fa-check-circle" style="color: #2e7d32;"></i> Inclusions</h3>
+                    <ul class="list-check">
+                        <li><i class="fas fa-check-circle"></i> 2 nights Osaka, 4 nights Tokyo</li>
+                        <li><i class="fas fa-check-circle"></i> Daily breakfast, 1 Mt. Fuji lunch</li>
+                        <li><i class="fas fa-check-circle"></i> Shinkansen (bullet train) Osaka → Tokyo</li>
+                        <li><i class="fas fa-check-circle"></i> Guided tours: Osaka Castle, Tokyo, Mt. Fuji 5th Station
+                        </li>
+                        <li><i class="fas fa-check-circle"></i> Deluxe coach to Hakone/Mt. Fuji</li>
+                        <li><i class="fas fa-check-circle"></i> All transfers as per itinerary</li>
+                        <li><i class="fas fa-check-circle"></i> Pocket WiFi / SIM card</li>
+                    </ul>
+                </div>
+                <div style="background: #fff4f2; padding: 32px; border-radius: 28px;">
+                    <h3 style="font-size: 1.7rem; margin-bottom: 28px; display: flex; gap: 12px;"><i
+                            class="fas fa-times-circle" style="color: #b33f2f;"></i> Exclusions</h3>
+                    <ul class="list-check">
+                        <li><i class="fas fa-times-circle"></i> International flights (reach Osaka on own)</li>
+                        <li><i class="fas fa-times-circle"></i> Visa fees & travel insurance</li>
+                        <li><i class="fas fa-times-circle"></i> Lunches (except Mt. Fuji) & dinners</li>
+                        <li><i class="fas fa-times-circle"></i> Personal expenses & shopping</li>
+                        <li><i class="fas fa-times-circle"></i> Optional teamLab Planets ticket</li>
+                        <li><i class="fas fa-times-circle"></i> Early check-in / late check-out</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LEAD CAPTURE / INQUIRY FORM – high intent, low friction -->
+    <div class="section-light" id="inquiry">
+        <div class="container">
+            <div class="grid-2" style="align-items: center;">
+                <div>
+                    <h2 style="color: var(--primary);">Ready to experience Japan?</h2>
+                    <p style="font-size: 1.2rem; margin-bottom: 24px;">Get a detailed itinerary, departure dates, and
+                        exclusive early-bird add-ons.</p>
+                    <div style="display: flex; flex-direction: column; gap: 16px;">
+                        <div style="display: flex; gap: 16px;">
+                            <span style="background: #e9eef3; padding: 12px 20px; border-radius: 50px;"><i
+                                    class="fas fa-tag"></i> 24% launch offer</span>
+                            <span style="background: #e9eef3; padding: 12px 20px; border-radius: 50px;"><i
+                                    class="fas fa-users"></i> Group discount</span>
+                        </div>
+                        <p style="color: var(--gray-600);"><i class="fas fa-phone-alt"
+                                style="color: var(--accent);"></i> Or call us: +91 98765 43210</p>
+                    </div>
+                </div>
+                <div class="lead-form">
+                    <h3 style="font-size: 1.6rem; margin-bottom: 8px;">Unlock Japan</h3>
+                    <p style="margin-bottom: 28px; color: #444;">Fill the form – we’ll reply within 30 mins</p>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <input type="text" placeholder="Full name *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Email address *" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Phone / WhatsApp *" required>
+                        </div>
+                        <div class="form-group">
+                            <select>
+                                <option>Preferred travel month</option>
+                                <option>Apr–May (Spring)</option>
+                                <option>Jun–Aug (Summer)</option>
+                                <option>Sep–Nov (Autumn)</option>
+                                <option>Dec–Mar (Winter)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block" style="padding: 18px;"><i
+                                class="fas fa-paper-plane"></i> Send Inquiry – Get Free Japan Guide</button>
+                        <p style="font-size: 0.75rem; color: #777; margin-top: 16px; text-align: center;">We respect
+                            your privacy. No spam.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FINAL BOOKING CTA + PRICE (sticky on mobile, inline on desktop) -->
+    <div class="section" id="booking" style="padding-top: 0;">
+        <div class="container">
+            <div class="pricing-card">
+                <div>
+                    <p style="color: var(--accent); font-weight: 600; letter-spacing: 1px;">✨ INSTANT CONFIRMATION</p>
+                    <h3 style="font-size: 2rem; color: var(--primary);">₹125,000 /person</h3>
+                    <p style="color: #666;"><span style="text-decoration: line-through;">₹165,000</span> • You save
+                        ₹40,000</p>
+                    <p style="margin-top: 8px;"><i class="fas fa-check-circle" style="color: #2e7d32;"></i> EMI
+                        available • Limited to 12 travelers</p>
+                </div>
+                <div style="text-align: right;">
+                    <a href="#" class="btn btn-primary" style="font-size: 1.3rem; padding: 18px 48px;">Book with 25%
+                        deposit</a>
+                    <p style="margin-top: 8px; color: var(--gray-600);"><i class="fas fa-lock"></i> Secure checkout •
+                        Free cancellation*</p>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 20px; font-size: 0.9rem;">*Please refer to our cancellation
+                policy. Taxes extra.</p>
+        </div>
+    </div>
+
+    <!-- STICKY MOBILE CTA – conversion on scroll -->
+    <div class="sticky-cta">
+        <div style="display: flex; gap: 12px;">
+            <a href="#inquiry" class="btn btn-secondary" style="flex: 1; padding: 14px;"><i class="fas fa-envelope"></i>
+                Inquire</a>
+            <a href="#" class="btn btn-primary" style="flex: 1; padding: 14px;"><i class="fas fa-bolt"></i> Book</a>
+        </div>
+    </div>
+
+    <!-- FOOTER – policy & trust -->
+    <footer>
+        <div class="container">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                <div style="display: flex; gap: 32px;">
+                    <i class="fas fa-globe" style="font-size: 1.8rem;"></i>
+                    <span>© EJI Travel — Japan Tour Specialists</span>
+                </div>
+                <div style="display: flex; gap: 28px;">
+                    <a href="#" style="color: white; text-decoration: none;">Privacy</a>
+                    <a href="#" style="color: white; text-decoration: none;">Terms</a>
+                    <a href="#" style="color: white; text-decoration: none;">Cancellation Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- subtle note: all images from pexels (free for commercial), representing actual experiences -->
+</body>
+
+</html>
