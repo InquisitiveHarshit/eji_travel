@@ -51,7 +51,7 @@ function HomePage() {
           </div>
         </div>
 
-        <section className="pt-0">
+        <section className="pt-0 py-3">
           <main className="gap-0">
             <section>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-6 sm:mb-8">
