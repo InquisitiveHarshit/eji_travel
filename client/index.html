@@ -7,6 +7,7 @@
     <title>Japan Tour | EJI Travel</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
@@ -183,6 +184,59 @@
         .btn-accent:hover {
             background: #a53d21;
             transform: translateY(-2px);
+        }
+
+        /* Glossy Orange CTA Button */
+        .btn-glossy {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fff;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            white-space: nowrap;
+            letter-spacing: 0.01em;
+            width: 100%;
+
+            /* Glossy orange gradient */
+            background: linear-gradient(
+                180deg,
+                #FFB347 0%,
+                #FF6B00 55%,
+                #FF4500 100%
+            );
+
+            /* Shadow + inner top shine */
+            box-shadow:
+                0 3px 12px rgba(255, 120, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+
+            transition: all 0.28s cubic-bezier(.22, .68, 0, 1.2);
+        }
+
+        .btn-glossy:hover {
+            filter: brightness(1.08);
+            transform: translateY(-2px);
+            box-shadow:
+                0 8px 24px rgba(255, 120, 0, 0.55),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+
+        .btn-glossy:active {
+            transform: translateY(0px) scale(0.98);
+            filter: brightness(0.95);
+            box-shadow:
+                0 2px 8px rgba(255, 120, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
         }
 
         /* Right Side Content Sections */

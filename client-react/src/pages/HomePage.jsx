@@ -17,36 +17,36 @@ function HomePage() {
   if (loading || !data) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <div className="text-primary text-xl">Loading...</div>
+        <div className="text-primary text-lg sm:text-xl">Loading...</div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen overflow-x-hidden">
       <Header />
 
       <Hero tour={data.tour} heroImage={data.heroImage} />
 
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-[50px] py-[60px] items-start">
-          <main className="flex flex-col gap-[80px]">
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_380px] gap-8 sm:gap-10 lg:gap-[50px] py-8 sm:py-12 md:py-[60px] items-start">
+          <main className="flex flex-col gap-12 sm:gap-16 lg:gap-[80px]">
             <section>
-              <h2 className="text-4xl font-bold text-primary mb-8">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-6 sm:mb-8">
                 Experience Highlights
               </h2>
               <FeaturesBar features={data.features} />
             </section>
 
             <section id="itinerary-anchor">
-              <h2 className="text-4xl font-bold text-primary mb-8">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-6 sm:mb-8">
                 The Itinerary
               </h2>
               <ItineraryList itinerary={data.itinerary} />
             </section>
           </main>
 
-          <aside className="sticky top-[120px] h-fit">
+          <aside className="lg:sticky lg:top-[120px] h-fit w-full">
             <InquiryForm variant="sidebar" />
           </aside>
         </div>
@@ -54,7 +54,7 @@ function HomePage() {
         <section className="pt-0">
           <main className="gap-0">
             <section>
-              <h2 className="text-4xl font-bold text-primary mb-8">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-6 sm:mb-8">
                 Inclusions & Exclusions
               </h2>
               <InclusionsExclusions
