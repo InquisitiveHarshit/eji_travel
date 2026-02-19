@@ -8,10 +8,8 @@ function Header() {
     <header className="h-auto md:h-20 flex items-center border-b border-bg-light bg-white sticky top-0 z-50">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 w-full">
         <div className="flex items-center justify-between py-4 md:py-0">
-          <Link to="/" className="text-xl sm:text-2xl font-extrabold text-primary no-underline flex items-center gap-2">
-            <i className="fas fa-torii-gate text-accent"></i>
-            <span className="hidden sm:inline">EJI TRAVEL</span>
-            <span className="sm:hidden">EJI</span>
+          <Link to="/" className="flex items-center gap-2 no-underline">
+            <img src="/logo.svg" alt="EJI Travel" className="h-10 sm:h-12 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}

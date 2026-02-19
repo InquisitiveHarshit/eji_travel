@@ -31,12 +31,12 @@ function HomePage() {
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_480px] gap-8 sm:gap-10 lg:gap-[50px] py-8 sm:py-12 md:py-[60px] items-start">
           <main className="flex flex-col gap-12 sm:gap-16 lg:gap-[80px]">
-            <section>
+            {/* <section>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-6 sm:mb-8">
                 Experience Highlights
               </h2>
               <FeaturesBar features={data.features} />
-            </section>
+            </section> */}
 
             <section id="itinerary-anchor">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-6 sm:mb-8">
