@@ -3,45 +3,36 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Japan Tour: Osaka to Tokyo & Beyond | EJI Travel</title>
-    <!-- Font & Icons -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap"
-        rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Japan Tour | EJI Travel</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
     <style>
-        /* Global Reset & Variables — Clean, trustworthy, travel-inspired */
+        :root {
+            --primary: #1a2e4f;
+            --accent: #c24a2a;
+            --gold: #b8914a;
+            --bg-light: #FAF9F6;
+            --white: #ffffff;
+            --text: #2D3436;
+            --border: #EEEEEE;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        :root {
-            --primary: #1a2e4f;
-            /* deep navy – trust, premium */
-            --accent: #c24a2a;
-            /* vermilion – energy, Japan's torii gates */
-            --gold: #b8914a;
-            /* gold – highlight, luxury */
-            --light-bg: #faf8f5;
-            /* warm white – paper texture feel */
-            --white: #ffffff;
-            --gray-100: #f7f7f7;
-            --gray-600: #5a5a5a;
-            --gray-900: #1e1e1e;
-            --shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.08);
-            --border-radius: 20px;
-            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        }
-
         body {
-            font-family: var(--font-sans);
-            background-color: var(--white);
-            color: var(--gray-900);
-            line-height: 1.5;
-            -webkit-font-smoothing: antialiased;
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            background: var(--white);
+            line-height: 1.6;
         }
 
         .container {
@@ -50,644 +41,767 @@
             padding: 0 24px;
         }
 
-        /* typography */
-        h1,
-        h2,
-        h3 {
-            font-weight: 700;
-            letter-spacing: -0.02em;
+        /* Header */
+        header {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+            background: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo i {
+            color: var(--accent);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 60px 0;
+            background: var(--bg-light);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
         }
 
         h1 {
-            font-size: 2.4rem;
-            line-height: 1.2;
-        }
-
-        h2 {
-            font-size: 2rem;
+            font-size: 2.8rem;
+            line-height: 1.1;
+            color: var(--primary);
             margin-bottom: 20px;
         }
 
-        .subhead {
-            font-size: 1.2rem;
-            font-weight: 400;
-            color: var(--gray-600);
-        }
-
-        /* CTA buttons – conversion focused */
-        .btn {
-            display: inline-block;
-            padding: 16px 32px;
-            border-radius: 40px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            text-align: center;
-            text-decoration: none;
-            transition: all 0.2s ease;
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        .btn-primary {
-            background-color: var(--accent);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background-color: #a63e22;
-            transform: translateY(-2px);
-            box-shadow: 0 15px 25px rgba(194, 74, 42, 0.25);
-        }
-
-        .btn-secondary {
-            background-color: white;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-        }
-
-        .btn-secondary:hover {
-            background-color: var(--primary);
-            color: white;
-        }
-
-        .btn-block {
-            display: block;
-            width: 100%;
-        }
-
-        /* pricing badge */
-        .price-badge {
-            background: white;
-            border-radius: 50px;
-            padding: 8px 20px;
+        .price-tag {
             display: inline-flex;
-            align-items: baseline;
+            align-items: center;
             gap: 12px;
-            box-shadow: var(--shadow);
-            margin-top: 20px;
-        }
-
-        .old-price {
-            font-size: 1.1rem;
-            color: var(--gray-600);
-            text-decoration: line-through;
+            margin: 20px 0;
+            background: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
         }
 
         .new-price {
             font-size: 2rem;
             font-weight: 800;
             color: var(--primary);
-            line-height: 1;
         }
 
-        .discount-badge {
-            background: var(--accent);
-            color: white;
-            padding: 6px 16px;
-            border-radius: 40px;
-            font-weight: 700;
+        .old-price {
+            text-decoration: line-through;
+            color: #999;
+        }
+
+        /* Main Content Grid (Sticky Parent) */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 50px;
+            padding: 60px 0;
+            align-items: start;
+        }
+
+        /* STICKY FORM WRAPPER - Limited sticky until Inclusions section */
+        .sticky-sidebar {
+            position: sticky;
+            top: 120px;
+        }
+
+        /* Final form section */
+        .final-form-section {
+            background: var(--bg-light);
+            padding: 80px 0;
+            margin-top: 60px;
+        }
+
+        .final-form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .final-form-card {
+            background: var(--primary);
+            padding: 40px;
+            border-radius: 12px;
+            color: #fff;
+            box-shadow: 0 10px 30px rgba(26, 46, 79, 0.15);
+        }
+
+        .form-card {
+            background: var(--primary);
+            padding: 35px;
+            border-radius: 12px;
+            color: #fff;
+            box-shadow: 0 10px 30px rgba(26, 46, 79, 0.15);
+        }
+
+        .form-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+            border: none;
             font-size: 1rem;
         }
 
-        /* layout helpers */
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
+        .btn-accent {
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 16px;
+            width: 100%;
+            border-radius: 6px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
         }
 
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 1.9rem;
-            }
-
-            .grid-2 {
-                grid-template-columns: 1fr;
-                gap: 32px;
-            }
-
-            .container {
-                padding: 0 20px;
-            }
+        .btn-accent:hover {
+            background: #a53d21;
+            transform: translateY(-2px);
         }
 
-        /* hero section */
-        .hero {
-            padding: 40px 0 60px;
-            background: linear-gradient(to bottom, var(--white), var(--light-bg));
-        }
-
-        .hero-content {
+        /* Right Side Content Sections */
+        .content-area {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            gap: 80px;
         }
 
-        .hero-image {
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            height: 100%;
-            min-height: 340px;
-            background: url('https://images.pexels.com/photos/402028/pexels-photo-402028.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2') center/cover no-repeat;
+        .section-title {
+            margin-bottom: 30px;
+            font-size: 2rem;
+            color: var(--primary);
         }
 
-        /* trust badges */
-        .trust-badges {
-            display: flex;
-            gap: 24px;
-            margin: 24px 0 16px;
-            flex-wrap: wrap;
-        }
-
-        .trust-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.95rem;
-            color: var(--gray-600);
-        }
-
-        .trust-item i {
-            color: var(--gold);
-        }
-
-        /* itinerary cards */
-        .section {
-            padding: 70px 0;
-        }
-
-        .section-light {
-            background-color: var(--light-bg);
-        }
-
-        .itinerary-grid {
+        /* Features Bar */
+        .features-bar {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-            gap: 28px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .feat-item {
+            padding: 20px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .feat-item i {
+            font-size: 1.8rem;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+
+        /* Itinerary Timeline View */
+        .itinerary-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
         }
 
         .day-card {
-            background: white;
-            border-radius: 24px;
-            padding: 24px;
-            box-shadow: var(--shadow);
-            transition: all 0.25s ease;
-            border: 1px solid rgba(0, 0, 0, 0.02);
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 20px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            background: #fff;
+            transition: 0.3s;
         }
 
         .day-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.15);
+            border-color: var(--accent);
         }
 
         .day-card img {
             width: 100%;
-            height: 180px;
+            height: 100%;
             object-fit: cover;
-            border-radius: 16px;
-            margin-bottom: 18px;
         }
 
-        .day-number {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            font-weight: 600;
-            padding: 4px 14px;
-            border-radius: 40px;
-            font-size: 0.85rem;
-            letter-spacing: 0.5px;
-            margin-bottom: 12px;
+        .day-body {
+            padding: 20px;
         }
 
-        .day-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-            color: var(--primary);
-        }
-
-        /* feature highlights */
-        .feature-highlights {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 28px;
-            margin: 48px 0 24px;
-            justify-content: center;
-        }
-
-        .feature-item {
-            background: white;
-            padding: 24px 20px;
-            border-radius: 20px;
-            flex: 1 1 200px;
-            text-align: center;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.02);
-            border: 1px solid #f0f0f0;
-        }
-
-        .feature-item i {
-            font-size: 2.2rem;
+        .day-label {
             color: var(--accent);
-            margin-bottom: 12px;
+            font-weight: 800;
+            font-size: 0.75rem;
+            text-transform: uppercase;
         }
 
-        /* pricing section */
-        .pricing-card {
-            background: white;
-            border-radius: 32px;
-            padding: 40px;
-            box-shadow: var(--shadow);
-            border: 1px solid #eaeaea;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .price-details {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .incl-excl {
+        /* Policy Grid */
+        .policy-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 32px;
-            margin-top: 40px;
         }
 
-        .list-check {
+        .policy-box {
+            padding: 32px;
+            border-radius: 28px;
+        }
+
+        .inc-box {
+            background: #f3f7fa;
+        }
+
+        .exc-box {
+            background: #fff4f2;
+        }
+
+        .policy-list {
             list-style: none;
         }
 
-        .list-check li {
+        .policy-list li {
             margin-bottom: 12px;
             display: flex;
             align-items: baseline;
             gap: 10px;
+            font-size: 0.95rem;
         }
 
-        .list-check i.fa-check-circle {
+        .policy-list i.fa-check-circle {
             color: #2e7d32;
         }
 
-        .list-check i.fa-times-circle {
+        .policy-list i.fa-times-circle {
             color: #b33f2f;
         }
 
-        /* lead capture form */
-        .lead-form {
-            background: white;
-            padding: 32px;
-            border-radius: 28px;
-            box-shadow: var(--shadow);
-            border: 1px solid #eaeef2;
+        /* Privacy Policy Section */
+        .privacy-section {
+            margin-top: 60px;
+            padding: 60px 0;
+            background: var(--bg-light);
+            border-radius: 12px;
         }
 
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        input,
-        select {
-            width: 100%;
-            padding: 16px 20px;
-            border: 1px solid #d4dce2;
-            border-radius: 50px;
+        .privacy-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--primary);
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
             font-size: 1rem;
-            font-family: var(--font-sans);
-            background-color: white;
         }
 
-        input:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(26, 46, 79, 0.1);
+        .privacy-btn:hover {
+            background: var(--accent);
+            transform: translateY(-2px);
         }
 
-        .sticky-cta {
+        .privacy-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.85rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: var(--transition);
+            margin-top: 10px;
+        }
+
+        .privacy-link:hover {
+            color: var(--gold);
+            text-decoration: underline;
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(26, 46, 79, 0.8);
             display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            padding: 20px;
         }
 
-        @media (max-width: 600px) {
-            .sticky-cta {
-                display: block;
-                position: fixed;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                background: white;
-                padding: 16px 20px;
-                box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.08);
-                z-index: 100;
-                border-top: 1px solid #eee;
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #fff;
+            border-radius: 16px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
-        /* footer */
+        .modal-header {
+            position: sticky;
+            top: 0;
+            background: var(--primary);
+            color: #fff;
+            padding: 24px 32px;
+            border-radius: 16px 16px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h2 {
+            font-size: 1.8rem;
+            margin: 0;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1.8rem;
+            cursor: pointer;
+            padding: 0;
+            width: 32px;
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.3s;
+        }
+
+        .modal-close:hover {
+            color: var(--accent);
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 32px;
+        }
+
+        .policy-section-item {
+            margin-bottom: 32px;
+        }
+
+        .policy-section-item h3 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .policy-section-item h3::before {
+            content: '';
+            width: 4px;
+            height: 20px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .policy-section-item p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .policy-section-item ul {
+            list-style: none;
+            margin-left: 14px;
+            margin-bottom: 12px;
+        }
+
+        .policy-section-item ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .policy-section-item ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .policy-note {
+            background: #fff4f2;
+            padding: 12px 16px;
+            border-radius: 8px;
+            border-left: 3px solid var(--accent);
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 12px;
+        }
+
+        .contact-info {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 12px;
+        }
+
+        .contact-info p {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-info i {
+            color: var(--accent);
+            width: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .modal-content {
+                max-height: 90vh;
+            }
+
+            .modal-header {
+                padding: 16px 20px;
+            }
+
+            .modal-header h2 {
+                font-size: 1.4rem;
+            }
+
+            .modal-body {
+                padding: 20px;
+            }
+        }
+
         footer {
             background: var(--primary);
-            color: white;
-            padding: 32px 0;
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
             margin-top: 60px;
+        }
+
+        @media (max-width: 992px) {
+
+            .hero-grid,
+            .main-layout,
+            .day-card,
+            .policy-grid,
+            .final-form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sticky-sidebar {
+                position: relative;
+                top: 0;
+            }
+
+            .day-card img {
+                height: 200px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <!-- HERO SECTION – high-conversion: clear value prop, price, social proof, CTA -->
-    <div class="hero">
+    <header>
         <div class="container">
-            <div class="grid-2">
-                <div class="hero-content">
-                    <div class="trust-badges">
-                        <span class="trust-item"><i class="fas fa-star"></i> 4.9 (128 reviews)</span>
-                        <span class="trust-item"><i class="fas fa-shield-alt"></i> Secure Booking</span>
-                        <span class="trust-item"><i class="fas fa-clock"></i> Limited seats</span>
-                    </div>
-                    <h1>Japan Tour Packages Unveiled:<br>Osaka to Tokyo & Beyond</h1>
-                    <p class="subhead" style="margin-top: 20px;">7 days • 2N Osaka • 4N Tokyo • Bullet Train • Mt. Fuji
-                    </p>
+            <a href="#" class="logo"><i class="fas fa-torii-gate"></i> EJI TRAVEL</a>
+        </div>
+    </header>
 
-                    <!-- Pricing with 24% OFF – prominent -->
-                    <div class="price-badge">
-                        <span class="old-price">₹165,000</span>
-                        <span class="new-price">₹125,000</span>
-                        <span class="discount-badge">24% OFF</span>
-                    </div>
-                    <p style="color: var(--gray-600); margin-top: 8px;">Excluding applicable taxes • per person</p>
-
-                    <div style="display: flex; gap: 16px; margin-top: 32px; flex-wrap: wrap;">
-                        <a href="#inquiry" class="btn btn-secondary"><i class="fas fa-paper-plane"
-                                style="margin-right: 8px;"></i>Send Inquiry</a>
-                        <a href="#booking" class="btn btn-primary"><i class="fas fa-calendar-check"
-                                style="margin-right: 8px;"></i>Book Now – Only 4 Spots Left</a>
-                    </div>
-
-                    <!-- additional micro-text: trust -->
-                    <p style="font-size: 0.8rem; color: #777; margin-top: 24px;"><i class="fas fa-lock"
-                            style="margin-right: 6px;"></i>Easy EMI available • Instant confirmation • Flexible
-                        cancellation</p>
-                </div>
-
-                <!-- Hero Image – evokes emotion: Shinkansen / Mt Fuji / Dotonbori vibe -->
-                <div class="hero-image"
-                    style="background-image: url('https://images.pexels.com/photos/161251/senso-ji-temple-japan-kyoto-landmark-161251.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
-                    <!-- overlay subtle gradient for text, but just visual -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div data-aos="fade-right">
+                <span style="color: var(--accent); font-weight: 700; letter-spacing: 2px;">PREMIUM JOURNEY</span>
+                <h1 id="hero-title">...</h1>
+                <p id="hero-subtitle" style="font-size: 1.1rem; color: #666;"></p>
+                <div class="price-tag">
+                    <span class="old-price" id="old-price"></span>
+                    <span class="new-price" id="new-price"></span>
+                    <span id="discount-badge"
+                        style="background: var(--accent); color:#fff; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem;"></span>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <!-- ITINERARY HIGHLIGHTS – visual storytelling, each day with best-fit image -->
-    <div class="section">
-        <div class="container">
-            <h2 style="text-align: center; color: var(--primary);">✨ Your Journey — Day by Day</h2>
-            <p style="text-align: center; max-width: 700px; margin: 0 auto 20px; color: var(--gray-600);">Authentic
-                experiences, iconic sights, and seamless travel. Every detail crafted.</p>
-
-            <div class="itinerary-grid">
-                <!-- Day 1: Osaka – Dotonbori -->
-                <div class="day-card">
-                    <img src="https://images.pexels.com/photos/5313207/pexels-photo-5313207.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                        alt="Dotonbori Osaka at night" loading="lazy">
-                    <span class="day-number">DAY 1</span>
-                    <div class="day-title">Arrival in Osaka – Dotonbori Lights</div>
-                    <p style="color: var(--gray-600);">Konnichiwa! Settle in, then dive into the city of food and neon.
-                        Your first taste of Japan's hospitality.</p>
-                </div>
-                <!-- Day 2: Osaka Castle & Culture -->
-                <div class="day-card">
-                    <img src="https://images.pexels.com/photos/19104729/pexels-photo-19104729.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                        alt="Osaka Castle" loading="lazy">
-                    <span class="day-number">DAY 2</span>
-                    <div class="day-title">Osaka Castle & Culinary Walk</div>
-                    <p style="color: var(--gray-600);">Step back in time at the legendary castle, then guided tour
-                        through samurai history and local flavors.</p>
-                </div>
-                <!-- Day 3: Shinkansen to Tokyo -->
-                <div class="day-card">
-                    <img src="https://images.pexels.com/photos/696680/pexels-photo-696680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                        alt="Shinkansen bullet train" loading="lazy">
-                    <span class="day-number">DAY 3</span>
-                    <div class="day-title">Bullet Train to Tokyo</div>
-                    <p style="color: var(--gray-600);">Marvel at the Shinkansen—comfort, speed, views. Arrive in Tokyo
-                        where old meets new.</p>
-                </div>
-                <!-- Day 4: Tokyo – Meiji Shrine & Contrasts -->
-                <div class="day-card">
-                    <img src="https://images.pexels.com/photos/2069294/pexels-photo-2069294.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                        alt="Meiji Shrine Tokyo" loading="lazy">
-                    <span class="day-number">DAY 4</span>
-                    <div class="day-title">Timeless Tokyo: Meiji & Beyond</div>
-                    <p style="color: var(--gray-600);">Luxury guided city tour. Peaceful Meiji Shrine, then the electric
-                        energy of Shibuya.</p>
-                </div>
-                <!-- Day 5: Mt. Fuji & Hakone -->
-                <div class="day-card">
-                    <img src="https://images.pexels.com/photos/3408354/pexels-photo-3408354.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                        alt="Mount Fuji" loading="lazy">
-                    <span class="day-number">DAY 5</span>
-                    <div class="day-title">Mt. Fuji & Hakone</div>
-                    <p style="color: var(--gray-600);">Deluxe coach to 5th Station, buffet lunch with sacred peak views.
-                        Japan's natural wonder.</p>
-                </div>
-                <!-- Day 6: Tokyo – Leisure/TeamLab -->
-                <div class="day-card">
-                    <img src="https://images.pexels.com/photos/3581366/pexels-photo-3581366.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                        alt="TeamLab Planets digital art" loading="lazy">
-                    <span class="day-number">DAY 6</span>
-                    <div class="day-title">Your Tokyo Discovery</div>
-                    <p style="color: var(--gray-600);">Free day: Ginza luxury, teamLab Planets, or hidden alleys. Your
-                        choice, perfectly free.</p>
-                </div>
-                <!-- Day 7: Farewell -->
-                <div class="day-card">
-                    <img src="https://images.pexels.com/photos/3711776/pexels-photo-3711776.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                        alt="Narita Airport" loading="lazy">
-                    <span class="day-number">DAY 7</span>
-                    <div class="day-title">Sayonara with Memories</div>
-                    <p style="color: var(--gray-600);">Breakfast, transfer to airport. Leave with the heart of Japan,
-                        not just photos.</p>
-                </div>
+            <div data-aos="zoom-in">
+                <img id="hero-img" src="" style="width: 100%; border-radius: 12px; height: 350px; object-fit: cover;"
+                    alt="Japan">
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- EXPERIENCE FEATURES / Trust + conversion triggers -->
-    <div class="section-light">
-        <div class="container">
-            <div class="feature-highlights">
-                <div class="feature-item">
-                    <i class="fas fa-train"></i>
-                    <h3>Bullet Train</h3>
-                    <p style="color: #5a5a5a;">Osaka → Tokyo: included</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-hotel"></i>
-                    <h3>Handpicked Hotels</h3>
-                    <p style="color: #5a5a5a;">2N Osaka + 4N Tokyo</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-utensils"></i>
-                    <h3>Daily Breakfast</h3>
-                    <p style="color: #5a5a5a;">+ Mt. Fuji buffet lunch</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-user-tie"></i>
-                    <h3>Guided Tours</h3>
-                    <p style="color: #5a5a5a;">Osaka Castle, Tokyo, Mt Fuji</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-wifi"></i>
-                    <h3>Pocket WiFi</h3>
-                    <p style="color: #5a5a5a;">Stay connected en-route</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="container">
+        <div class="main-layout">
 
-    <!-- INCLUSIONS / EXCLUSIONS & PRICE BREAKDOWN (clear policy) -->
-    <div class="section" id="inclusions">
-        <div class="container">
-            <div class="incl-excl">
-                <div style="background: #f3f7fa; padding: 32px; border-radius: 28px;">
-                    <h3 style="font-size: 1.7rem; margin-bottom: 28px; display: flex; gap: 12px;"><i
-                            class="fas fa-check-circle" style="color: #2e7d32;"></i> Inclusions</h3>
-                    <ul class="list-check">
-                        <li><i class="fas fa-check-circle"></i> 2 nights Osaka, 4 nights Tokyo</li>
-                        <li><i class="fas fa-check-circle"></i> Daily breakfast, 1 Mt. Fuji lunch</li>
-                        <li><i class="fas fa-check-circle"></i> Shinkansen (bullet train) Osaka → Tokyo</li>
-                        <li><i class="fas fa-check-circle"></i> Guided tours: Osaka Castle, Tokyo, Mt. Fuji 5th Station
-                        </li>
-                        <li><i class="fas fa-check-circle"></i> Deluxe coach to Hakone/Mt. Fuji</li>
-                        <li><i class="fas fa-check-circle"></i> All transfers as per itinerary</li>
-                        <li><i class="fas fa-check-circle"></i> Pocket WiFi / SIM card</li>
-                    </ul>
-                </div>
-                <div style="background: #fff4f2; padding: 32px; border-radius: 28px;">
-                    <h3 style="font-size: 1.7rem; margin-bottom: 28px; display: flex; gap: 12px;"><i
-                            class="fas fa-times-circle" style="color: #b33f2f;"></i> Exclusions</h3>
-                    <ul class="list-check">
-                        <li><i class="fas fa-times-circle"></i> International flights (reach Osaka on own)</li>
-                        <li><i class="fas fa-times-circle"></i> Visa fees & travel insurance</li>
-                        <li><i class="fas fa-times-circle"></i> Lunches (except Mt. Fuji) & dinners</li>
-                        <li><i class="fas fa-times-circle"></i> Personal expenses & shopping</li>
-                        <li><i class="fas fa-times-circle"></i> Optional teamLab Planets ticket</li>
-                        <li><i class="fas fa-times-circle"></i> Early check-in / late check-out</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
+            <main class="content-area">
 
-    <!-- LEAD CAPTURE / INQUIRY FORM – high intent, low friction -->
-    <div class="section-light" id="inquiry">
-        <div class="container">
-            <div class="grid-2" style="align-items: center;">
-                <div>
-                    <h2 style="color: var(--primary);">Ready to experience Japan?</h2>
-                    <p style="font-size: 1.2rem; margin-bottom: 24px;">Get a detailed itinerary, departure dates, and
-                        exclusive early-bird add-ons.</p>
-                    <div style="display: flex; flex-direction: column; gap: 16px;">
-                        <div style="display: flex; gap: 16px;">
-                            <span style="background: #e9eef3; padding: 12px 20px; border-radius: 50px;"><i
-                                    class="fas fa-tag"></i> 24% launch offer</span>
-                            <span style="background: #e9eef3; padding: 12px 20px; border-radius: 50px;"><i
-                                    class="fas fa-users"></i> Group discount</span>
-                        </div>
-                        <p style="color: var(--gray-600);"><i class="fas fa-phone-alt"
-                                style="color: var(--accent);"></i> Or call us: +91 98765 43210</p>
-                    </div>
-                </div>
-                <div class="lead-form">
-                    <h3 style="font-size: 1.6rem; margin-bottom: 8px;">Unlock Japan</h3>
-                    <p style="margin-bottom: 28px; color: #444;">Fill the form – we’ll reply within 30 mins</p>
-                    <form action="#" method="post">
-                        <div class="form-group">
-                            <input type="text" placeholder="Full name *" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Email address *" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="tel" placeholder="Phone / WhatsApp *" required>
-                        </div>
-                        <div class="form-group">
-                            <select>
-                                <option>Preferred travel month</option>
-                                <option>Apr–May (Spring)</option>
-                                <option>Jun–Aug (Summer)</option>
-                                <option>Sep–Nov (Autumn)</option>
-                                <option>Dec–Mar (Winter)</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block" style="padding: 18px;"><i
-                                class="fas fa-paper-plane"></i> Send Inquiry – Get Free Japan Guide</button>
-                        <p style="font-size: 0.75rem; color: #777; margin-top: 16px; text-align: center;">We respect
-                            your privacy. No spam.</p>
+                <section>
+                    <h2 class="section-title">Experience Highlights</h2>
+                    <div class="features-bar" id="features-list"></div>
+                </section>
+
+                <section id="itinerary-anchor">
+                    <h2 class="section-title">The Itinerary</h2>
+                    <div class="itinerary-stack" id="itinerary-list"></div>
+                </section>
+
+            </main>
+
+            <aside class="sticky-sidebar">
+                <div class="form-card" data-aos="fade-up">
+                    <h3>Get a Quote</h3>
+                    <p style="margin-bottom: 20px; opacity: 0.8; font-size: 0.9rem;">Expert planning & callback in 30
+                        mins.</p>
+                    <form>
+                        <input type="text" placeholder="Full Name" required>
+                        <input type="email" placeholder="Email Address" required>
+                        <input type="tel" placeholder="WhatsApp Number" required>
+                        <button class="btn-accent">RESERVE MY SPOT</button>
                     </form>
+                    <p style="font-size: 0.7rem; margin-top: 15px; text-align: center; opacity: 0.6;"><i
+                            class="fas fa-clock"></i> Limited Availability for 2026</p>
                 </div>
+            </aside>
+        </div>
+
+        <!-- Inclusions & Exclusions - Side by side with form -->
+        <div class="" style="padding-top: 0;">
+            <main class="content-layout" style="gap: 0;">
+                <section>
+                    <h2 class="section-title">Inclusions & Exclusions</h2>
+                    <div class="policy-grid">
+                        <div class="policy-box inc-box">
+                            <h3 style="font-size: 1.7rem; margin-bottom: 28px; display: flex; gap: 12px;"><i
+                                    class="fas fa-check-circle" style="color: #2e7d32;"></i> Inclusions</h3>
+                            <ul class="policy-list" id="inclusion-list"></ul>
+                        </div>
+                        <div class="policy-box exc-box">
+                            <h3 style="font-size: 1.7rem; margin-bottom: 28px; display: flex; gap: 12px;"><i
+                                    class="fas fa-times-circle" style="color: #b33f2f;"></i> Exclusions</h3>
+                            <ul class="policy-list" id="exclusion-list"></ul>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+
+        </div>
+    </div>
+
+
+    <!-- Privacy Policy Modal -->
+    <div class="modal-overlay" id="policyModal" onclick="closePolicyModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2><i class="fas fa-shield-alt"></i> Privacy Policy</h2>
+                <button class="modal-close" onclick="closePolicyModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="policyModalBody">
+                <!-- Content will be populated by JavaScript -->
             </div>
         </div>
     </div>
 
-    <!-- FINAL BOOKING CTA + PRICE (sticky on mobile, inline on desktop) -->
-    <div class="section" id="booking" style="padding-top: 0;">
-        <div class="container">
-            <div class="pricing-card">
-                <div>
-                    <p style="color: var(--accent); font-weight: 600; letter-spacing: 1px;">✨ INSTANT CONFIRMATION</p>
-                    <h3 style="font-size: 2rem; color: var(--primary);">₹125,000 /person</h3>
-                    <p style="color: #666;"><span style="text-decoration: line-through;">₹165,000</span> • You save
-                        ₹40,000</p>
-                    <p style="margin-top: 8px;"><i class="fas fa-check-circle" style="color: #2e7d32;"></i> EMI
-                        available • Limited to 12 travelers</p>
-                </div>
-                <div style="text-align: right;">
-                    <a href="#" class="btn btn-primary" style="font-size: 1.3rem; padding: 18px 48px;">Book with 25%
-                        deposit</a>
-                    <p style="margin-top: 8px; color: var(--gray-600);"><i class="fas fa-lock"></i> Secure checkout •
-                        Free cancellation*</p>
-                </div>
+    <!-- Final Form Section -->
+    <section class="final-form-section">
+        <div class="container final-form-grid">
+            <div data-aos="fade-right">
+                <h2 class="section-title">Ready to Explore Japan?</h2>
+                <p style="font-size: 1.1rem; color: #666; margin-bottom: 30px;">Let our experts craft your perfect
+                    itinerary. Fill in your details and we'll get back to you within 30 minutes.</p>
+                <ul style="list-style: none; display: flex; flex-direction: column; gap: 15px;">
+                    <li style="display: flex; align-items: center; gap: 10px;"><i class="fas fa-check"
+                            style="color: var(--accent);"></i> Personalized itinerary planning</li>
+                    <li style="display: flex; align-items: center; gap: 10px;"><i class="fas fa-check"
+                            style="color: var(--accent);"></i> Best price guarantee</li>
+                    <li style="display: flex; align-items: center; gap: 10px;"><i class="fas fa-check"
+                            style="color: var(--accent);"></i> 24/7 support during your trip</li>
+                </ul>
             </div>
-            <p style="text-align: center; margin-top: 20px; font-size: 0.9rem;">*Please refer to our cancellation
-                policy. Taxes extra.</p>
+            <div class="final-form-card" data-aos="fade-left">
+                <h3 style="margin-bottom: 15px; font-size: 1.5rem;">Get Your Free Quote</h3>
+                <form>
+                    <input type="text" placeholder="Full Name" required>
+                    <input type="email" placeholder="Email Address" required>
+                    <input type="tel" placeholder="WhatsApp Number" required>
+                    <button class="btn-accent">RESERVE MY SPOT</button>
+                </form>
+                <p style="font-size: 0.7rem; margin-top: 15px; text-align: center; opacity: 0.6;"><i
+                        class="fas fa-clock"></i> Limited Availability for 2026</p>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <!-- STICKY MOBILE CTA – conversion on scroll -->
-    <div class="sticky-cta">
-        <div style="display: flex; gap: 12px;">
-            <a href="#inquiry" class="btn btn-secondary" style="flex: 1; padding: 14px;"><i class="fas fa-envelope"></i>
-                Inquire</a>
-            <a href="#" class="btn btn-primary" style="flex: 1; padding: 14px;"><i class="fas fa-bolt"></i> Book</a>
-        </div>
-    </div>
-
-    <!-- FOOTER – policy & trust -->
     <footer>
         <div class="container">
-            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
-                <div style="display: flex; gap: 32px;">
-                    <i class="fas fa-globe" style="font-size: 1.8rem;"></i>
-                    <span>© EJI Travel — Japan Tour Specialists</span>
-                </div>
-                <div style="display: flex; gap: 28px;">
-                    <a href="#" style="color: white; text-decoration: none;">Privacy</a>
-                    <a href="#" style="color: white; text-decoration: none;">Terms</a>
-                    <a href="#" style="color: white; text-decoration: none;">Cancellation Policy</a>
-                </div>
+            <p style="font-weight: 800; font-size: 1.2rem; margin-bottom: 10px;">EJI TRAVEL</p>
+            <p>© 2026 Japan Specialist. All Rights Reserved.</p>
+            <div style="margin-top: 15px;">
+                <a href="privacy-policy.html" class="privacy-link" style="font-size: 0.9rem;" target="_blank">
+                    <i class="fas fa-file-alt"></i> Privacy Policy
+                </a>
             </div>
         </div>
     </footer>
 
-    <!-- subtle note: all images from pexels (free for commercial), representing actual experiences -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+
+        // Fetch data from external JSON file
+        fetch('data.json')
+            .then(response => response.json())
+            .then(travelData => {
+                // Render Hero
+                document.getElementById('hero-title').textContent = travelData.tour.title;
+                document.getElementById('hero-subtitle').textContent = travelData.tour.subtitle;
+                document.getElementById('old-price').textContent = travelData.tour.pricing.currency + travelData.tour.pricing.oldPrice.toLocaleString();
+                document.getElementById('new-price').textContent = travelData.tour.pricing.currency + travelData.tour.pricing.newPrice.toLocaleString();
+                document.getElementById('discount-badge').textContent = travelData.tour.pricing.discount + "% OFF";
+                document.getElementById('hero-img').src = travelData.heroImage;
+
+                // Render Features
+                document.getElementById('features-list').innerHTML = travelData.features.map(f => `
+                    <div class="feat-item">
+                        <i class="fas ${f.icon}"></i>
+                        <h4>${f.title}</h4>
+                        <p style="font-size:0.8rem; color:#666;">${f.description}</p>
+                    </div>
+                `).join('');
+
+                // Render Itinerary (Horizontal Card Style)
+                document.getElementById('itinerary-list').innerHTML = travelData.itinerary.map(i => `
+                    <div class="day-card" data-aos="fade-left">
+                        <img src="${i.image}" alt="${i.title}">
+                        <div class="day-body">
+                            <span class="day-label">Day ${i.day}</span>
+                            <h3 style="margin:5px 0;">${i.title}</h3>
+                            <p style="font-size:0.9rem; color:#666;">${i.description}</p>
+                        </div>
+                    </div>
+                `).join('');
+
+                // Render Policies
+                document.getElementById('inclusion-list').innerHTML = travelData.inclusions.map(t => `<li><i class="fas fa-check-circle"></i> ${t}</li>`).join('');
+                document.getElementById('exclusion-list').innerHTML = travelData.exclusions.map(t => `<li><i class="fas fa-times-circle"></i> ${t}</li>`).join('');
+
+                // Privacy Policy Modal Functions
+                function openPolicyModal() {
+                    const modal = document.getElementById('policyModal');
+                    const modalBody = document.getElementById('policyModalBody');
+                    const policy = travelData.privacyPolicy;
+
+                    let content = `<p style="font-size: 1rem; color: #666; line-height: 1.8; margin-bottom: 30px;">${policy.introduction}</p>`;
+
+                    policy.sections.forEach(section => {
+                        content += `<div class="policy-section-item">`;
+                        content += `<h3>${section.heading}</h3>`;
+                        content += `<p>${section.content}</p>`;
+
+                        if (section.items) {
+                            content += `<ul>`;
+                            section.items.forEach(item => {
+                                content += `<li>${item}</li>`;
+                            });
+                            content += `</ul>`;
+                        }
+
+                        if (section.note) {
+                            content += `<div class="policy-note"><i class="fas fa-info-circle"></i> ${section.note}</div>`;
+                        }
+
+                        if (section.contact) {
+                            content += `<div class="contact-info">`;
+                            if (section.contact.email) {
+                                content += `<p><i class="fas fa-envelope"></i> ${section.contact.email}</p>`;
+                            }
+                            if (section.contact.address) {
+                                content += `<p><i class="fas fa-map-marker-alt"></i> ${section.contact.address}</p>`;
+                            }
+                            if (section.contact.phone) {
+                                content += `<p><i class="fas fa-phone"></i> ${section.contact.phone}</p>`;
+                            }
+                            content += `</div>`;
+                        }
+
+                        content += `</div>`;
+                    });
+
+                    modalBody.innerHTML = content;
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+
+                function closePolicyModal(event) {
+                    const modal = document.getElementById('policyModal');
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+
+                // Close modal on Escape key
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape') {
+                        const modal = document.getElementById('policyModal');
+                        if (modal.classList.contains('active')) {
+                            closePolicyModal();
+                        }
+                    }
+                });
+
+                // Make functions globally accessible
+                window.openPolicyModal = openPolicyModal;
+                window.closePolicyModal = closePolicyModal;
+            })
+            .catch(error => console.error('Error loading data:', error));
+    </script>
 </body>
 
 </html>
