@@ -23,7 +23,7 @@ function HomePage() {
   }
 
   return (
-    <div className="min-h-screen overflow-x-hidden">
+    <div className="min-h-screen" style={{ overflowX: 'clip' }}>
       <Header />
 
       <Hero tour={data.tour} heroImage={data.heroImage} />
@@ -46,7 +46,7 @@ function HomePage() {
             </section>
           </main>
 
-          <div className="relative lg:sticky lg:top-[120px] lg:self-start h-fit w-full">
+          <div className="sticky top-[120px] h-fit w-full self-start">
             <InquiryForm variant="sidebar" />
           </div>
         </div>
