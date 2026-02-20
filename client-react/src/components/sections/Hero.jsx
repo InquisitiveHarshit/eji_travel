@@ -9,11 +9,36 @@ function Hero({ tour }) {
         backgroundRepeat: "no-repeat",
       }}
     >
+      <style>{`
+        @keyframes shimmer {
+          0% {
+            background-position: -200% center;
+          }
+          100% {
+            background-position: 200% center;
+          }
+        }
+        .shimmer-text {
+          background: linear-gradient(
+            90deg,
+            rgba(255, 140, 0, 0.5) 0%,
+            rgba(255, 165, 0, 0.8) 25%,
+            rgba(255, 215, 0, 1) 50%,
+            rgba(255, 165, 0, 0.8) 75%,
+            rgba(255, 140, 0, 0.5) 100%
+          );
+          background-size: 200% auto;
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          animation: shimmer 3s ease-in-out infinite;
+        }
+      `}</style>
       <div className="absolute inset-0 bg-black/40"></div>
       <div className="relative max-w-screen-xl mx-auto px-4 sm:px-6 w-full">
         <div className="max-w-2xl">
-          <span className="text-accent font-bold tracking-widest text-xs sm:text-sm">PREMIUM JOURNEY</span>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mt-3 sm:mt-4 md:mt-5 mb-4 sm:mb-5 bg-gradient-to-r from-orange-300 via-orange-400 to-orange-500 bg-clip-text text-transparent">
+          <span className="font-bold tracking-widest text-xs sm:text-sm shimmer-text">PREMIUM JOURNEY</span>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mt-1 sm:mt-2 md:mt-3 mb-1 sm:mb-2 md:mb-3 bg-gradient-to-r from-orange-300 via-orange-400 to-orange-500 bg-clip-text text-transparent">
             {tour.title}
           </h1>
           <p className="text-base sm:text-lg text-white mb-4 sm:mb-5">
