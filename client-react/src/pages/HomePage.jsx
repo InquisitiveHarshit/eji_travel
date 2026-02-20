@@ -10,16 +10,14 @@ import PrivacyPolicyModal from '../components/PrivacyPolicyModal';
 import FinalFormSection from '../components/FinalFormSection';
 import Footer from '../components/Footer';
 
+import SkeletonLoader from '../components/SkeletonLoader';
+
 function HomePage() {
   const { data, loading } = useData();
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   if (loading || !data) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-primary text-lg sm:text-xl">Loading...</div>
-      </div>
-    );
+    return <SkeletonLoader />;
   }
 
   return (
