@@ -6,6 +6,7 @@ import FeaturesBar from '../components/sections/FeaturesBar';
 import ItineraryList from '../components/sections/ItineraryList';
 import InquiryForm from '../components/forms/InquiryForm';
 import InclusionsExclusions from '../components/sections/InclusionsExclusions';
+import TrustSection from '../components/sections/TrustSection';
 import PrivacyPolicyModal from '../components/modals/PrivacyPolicyModal';
 import FinalFormSection from '../components/forms/FinalFormSection';
 import Footer from '../components/layout/Footer';
@@ -63,6 +64,8 @@ function HomePage() {
             </section>
           </main>
         </section>
+
+        <TrustSection />
       </div>
 
       <PrivacyPolicyModal

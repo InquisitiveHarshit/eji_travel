@@ -1,14 +1,24 @@
+import { useState, useEffect } from 'react';
+
+const carouselImages = [
+  '/heroImage.png',
+  '/tower.png',
+  '/shibuya.png',
+];
+
 function Hero({ tour }) {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % carouselImages.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section
-      className="relative py-10 sm:py-12 md:py-15 lg:py-20 min-h-[500px] flex items-center"
-      style={{
-        backgroundImage: "url('/heroImage.png')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
+    <section className="relative py-10 sm:py-12 md:py-15 lg:py-20 min-h-[500px] flex items-center overflow-hidden">
       <style>{`
         @keyframes shimmer {
           0% {
@@ -33,9 +43,52 @@ function Hero({ tour }) {
           -webkit-text-fill-color: transparent;
           animation: shimmer 3s ease-in-out infinite;
         }
+        .carousel-slide {
+          opacity: 0;
+          transition: opacity 1s ease-in-out;
+        }
+        .carousel-slide.active {
+          opacity: 1;
+        }
       `}</style>
+
+      {/* Carousel Background */}
+      <div className="absolute inset-0 -z-20 bg-gray-900">
+        {carouselImages.map((img, index) => (
+          <div
+            key={img}
+            className={`absolute inset-0 carousel-slide ${
+              index === currentSlide ? 'active' : ''
+            }`}
+            style={{
+              backgroundImage: `url('${img}')`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+            }}
+          />
+        ))}
+      </div>
+
       <div className="absolute inset-0 bg-black/40"></div>
-      <div className="relative max-w-screen-xl mx-auto px-4 sm:px-6 w-full">
+
+      {/* Carousel Indicators */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
+        {carouselImages.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              index === currentSlide
+                ? 'bg-orange-500 w-8'
+                : 'bg-white/50 hover:bg-white/80'
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
+
+      <div className="relative max-w-screen-xl mx-auto px-4 sm:px-6 w-full z-10">
         <div className="max-w-2xl">
           <span className="font-bold tracking-widest text-xs sm:text-sm shimmer-text">PREMIUM JOURNEY</span>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight mt-1 sm:mt-2 md:mt-3 mb-1 sm:mb-2 md:mb-3 bg-gradient-to-r from-orange-300 via-orange-400 to-orange-500 bg-clip-text text-transparent">
