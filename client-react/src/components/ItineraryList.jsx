@@ -10,7 +10,7 @@ function ItineraryList({ itinerary }) {
       <LayoutGroup>
         <div className="flex flex-col gap-8 relative">
           {/* Vertical Timeline Line */}
-          <div className="absolute left-[20px] sm:left-[100px] top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent/50 via-accent/20 to-transparent hidden sm:block" />
+          <div className="absolute left-[20px] sm:left-[100px] top-2 bottom-0 w-0.5 bg-gradient-to-b from-accent/50 via-accent/20 to-transparent hidden sm:block" />
 
           {itinerary.map((item, index) => (
             <motion.div

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import GlossyButton from './GlossyButton';
+import data from '../data/data.json';
 
 const countryCodes = [
   { code: "+91", country: "IN" },
@@ -76,6 +77,13 @@ function InquiryForm({ variant = "sidebar", id }) {
   const errorMsg = "text-[#e53935] text-[0.75rem] mt-1";
   const label = "text-[#999] text-[0.82rem] mb-1";
 
+  const { oldPrice, newPrice, discount } = data.tour.pricing;
+  const savings = oldPrice - newPrice;
+
+  const formatPrice = (price) => {
+    return `INR ${price.toLocaleString('en-IN')}`;
+  };
+
   if (submitted) {
     return (
       <div className="w-full  flex items-center justify-center p-4 sm:p-8 font-['DM_Sans',-apple-system,BlinkMacSystemFont,sans-serif]">
@@ -105,10 +113,10 @@ function InquiryForm({ variant = "sidebar", id }) {
           Japan Delights | Group Tour Package
         </p>
         <div className="flex items-center gap-2 sm:gap-2.5 mb-4 sm:mb-5 flex-wrap">
-          <span className="text-xl sm:text-2xl font-bold text-[#1a1a1a]">INR 2,19,209</span>
-          <span className="text-xs sm:text-sm text-[#999] line-through">INR 2,91,523</span>
+          <span className="text-xl sm:text-2xl font-bold text-[#1a1a1a]">{formatPrice(newPrice)}</span>
+          <span className="text-xs sm:text-sm text-[#999] line-through">{formatPrice(oldPrice)}</span>
           <span className="bg-[#e6f4ea] text-[#2e7d32] text-[0.72rem] font-bold px-2 sm:px-[9px] py-0.5 sm:py-[3px] rounded-[4px] tracking-wide whitespace-nowrap">
-            SAVE INR 72,314
+            SAVE {formatPrice(savings)}
           </span>
         </div>
 
