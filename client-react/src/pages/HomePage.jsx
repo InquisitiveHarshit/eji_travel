@@ -9,6 +9,7 @@ import InclusionsExclusions from '../components/sections/InclusionsExclusions';
 import PrivacyPolicyModal from '../components/modals/PrivacyPolicyModal';
 import FinalFormSection from '../components/forms/FinalFormSection';
 import Footer from '../components/layout/Footer';
+import { motion } from "framer-motion";
 
 import SkeletonLoader from '../components/loaders/SkeletonLoader';
 
@@ -27,7 +28,7 @@ function HomePage() {
       <Hero tour={data.tour} heroImage={data.heroImage} />
 
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_480px] gap-8 sm:gap-10 lg:gap-[50px] py-8 sm:py-12 md:py-[60px] items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_480px] gap-8 sm:gap-10 lg:gap-[50px] pt-8 sm:pt-12 md:pt-[60px] pb-0 items-start">
           <main className="flex flex-col gap-12 sm:gap-16 lg:gap-[80px]">
             {/* <section>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-6 sm:mb-8">
