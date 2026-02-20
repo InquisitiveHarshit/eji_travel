@@ -91,6 +91,11 @@ function GetInTouchForm() {
   return (
     <div className="w-full  flex items-center justify-center p-4 sm:p-8 font-['DM_Sans',-apple-system,BlinkMacSystemFont,sans-serif]">
       <div className="bg-white rounded-xl sm:rounded-[16px] shadow-[0_4px_24px_rgba(255,140,0,0.18)] border border-[rgba(255,140,0,0.6)] p-5 sm:p-7 w-full max-w-[460px]">
+        {/* Header */}
+        <p className="text-lg sm:text-xl font-bold text-[#1a1a1a] mb-3 text-center">
+          Contact Us
+        </p>
+
         <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-3 sm:gap-3.5">
           {/* Full Name */}
           <div>
