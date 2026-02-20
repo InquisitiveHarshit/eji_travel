@@ -24,25 +24,57 @@ function GetInTouchForm() {
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
 
-  const validate = () => {
-    const newErrors = {};
-    if (!form.fullName.trim()) newErrors.fullName = "Full name is required";
-    if (!form.email.trim()) newErrors.email = "Email is required";
-    else if (!/\S+@\S+\.\S+/.test(form.email)) newErrors.email = "Enter a valid email";
-    if (!form.phone.trim()) newErrors.phone = "Phone number is required";
-    else if (!/^\d{7,15}$/.test(form.phone)) newErrors.phone = "Enter a valid phone number";
-    return newErrors;
+  const validateField = (name, value) => {
+    if (name === "fullName") {
+      if (!value.trim()) return "Full name is required";
+      if (value.trim().length < 2) return "Name must be at least 2 characters";
+      if (!/^[a-zA-Z\s]+$/.test(value.trim())) return "Name should not contain numbers or special characters";
+    }
+    if (name === "email") {
+      if (!value.trim()) return "Email is required";
+      if (!/\S+@\S+\.\S+/.test(value)) return "Enter a valid email";
+    }
+    if (name === "phone") {
+      if (!value.trim()) return "Phone number is required";
+      if (!/^\d{7,15}$/.test(value)) return "Enter a valid phone number (7-15 digits)";
+    }
+    return "";
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    
+    // For fullName, filter out numbers and special characters as user types
+    if (name === "fullName") {
+      const filteredValue = value.replace(/[^a-zA-Z\s]/g, "");
+      setForm((prev) => ({ ...prev, [name]: filteredValue }));
+      const error = validateField(name, filteredValue);
+      setErrors((prev) => ({ ...prev, [name]: error }));
+      return;
+    }
+    
+    // For phone, only allow digits
+    if (name === "phone") {
+      const filteredValue = value.replace(/\D/g, "");
+      setForm((prev) => ({ ...prev, [name]: filteredValue }));
+      const error = validateField(name, filteredValue);
+      setErrors((prev) => ({ ...prev, [name]: error }));
+      return;
+    }
+    
+    // For other fields, update normally
     setForm((prev) => ({ ...prev, [name]: value }));
-    if (errors[name]) setErrors((prev) => ({ ...prev, [name]: "" }));
+    const error = validateField(name, value);
+    setErrors((prev) => ({ ...prev, [name]: error }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const validationErrors = validate();
+    const validationErrors = {};
+    Object.keys(form).forEach(key => {
+      const error = validateField(key, form[key]);
+      if (error) validationErrors[key] = error;
+    });
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
