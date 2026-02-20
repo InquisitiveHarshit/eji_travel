@@ -1,16 +1,16 @@
 import { useState } from 'react';
 import { useData } from '../config/DataContext';
-import Header from '../components/Header';
-import Hero from '../components/Hero';
-import FeaturesBar from '../components/FeaturesBar';
-import ItineraryList from '../components/ItineraryList';
-import InquiryForm from '../components/InquiryForm';
-import InclusionsExclusions from '../components/InclusionsExclusions';
-import PrivacyPolicyModal from '../components/PrivacyPolicyModal';
-import FinalFormSection from '../components/FinalFormSection';
-import Footer from '../components/Footer';
+import Header from '../components/layout/Header';
+import Hero from '../components/sections/Hero';
+import FeaturesBar from '../components/sections/FeaturesBar';
+import ItineraryList from '../components/sections/ItineraryList';
+import InquiryForm from '../components/forms/InquiryForm';
+import InclusionsExclusions from '../components/sections/InclusionsExclusions';
+import PrivacyPolicyModal from '../components/modals/PrivacyPolicyModal';
+import FinalFormSection from '../components/forms/FinalFormSection';
+import Footer from '../components/layout/Footer';
 
-import SkeletonLoader from '../components/SkeletonLoader';
+import SkeletonLoader from '../components/loaders/SkeletonLoader';
 
 function HomePage() {
   const { data, loading } = useData();

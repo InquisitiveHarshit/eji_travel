@@ -1,6 +1,6 @@
 import { useState } from "react";
-import GlossyButton from './GlossyButton';
-import data from '../data/data.json';
+import GlossyButton from '../ui/GlossyButton';
+import data from '../../data/data.json';
 
 const countryCodes = [
   { code: "+91", country: "IN" },
@@ -36,7 +36,6 @@ function InquiryForm({ variant = "sidebar", id }) {
     else if (!/\S+@\S+\.\S+/.test(form.email)) newErrors.email = "Enter a valid email";
     if (!form.phone.trim()) newErrors.phone = "Phone number is required";
     else if (!/^\d{7,15}$/.test(form.phone)) newErrors.phone = "Enter a valid phone number";
-    if (!form.travelDate) newErrors.travelDate = "Travel date is required";
     if (!form.travellerCount) newErrors.travellerCount = "Traveller count is required";
     return newErrors;
   };

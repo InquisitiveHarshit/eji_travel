@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useData } from '../config/DataContext';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Header from '../components/layout/Header';
+import Footer from '../components/layout/Footer';
 
 function PrivacyPolicyPage() {
   const { data, loading } = useData();
