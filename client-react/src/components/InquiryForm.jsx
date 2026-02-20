@@ -12,7 +12,7 @@ const countryCodes = [
   { code: "+49", country: "DE" },
 ];
 
-function InquiryForm({ variant = "sidebar" }) {
+function InquiryForm({ variant = "sidebar", id }) {
   const isSidebar = variant === "sidebar";
 
   const [form, setForm] = useState({

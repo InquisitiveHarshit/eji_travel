@@ -17,11 +17,11 @@ function Header() {
             <a href="#itinerary-anchor" className="text-text hover:text-accent font-medium transition-smooth no-underline text-sm md:text-base">
               Itinerary
             </a>
-            <a href="#" className="text-text hover:text-accent font-medium transition-smooth no-underline text-sm md:text-base">
-              About
+            <a href="#inclusions-exclusions" className="text-text hover:text-accent font-medium transition-smooth no-underline text-sm md:text-base">
+              Inc&Exc
             </a>
-            <a href="#" className="text-text hover:text-accent font-medium transition-smooth no-underline text-sm md:text-base">
-              Contact
+            <a href="#inquiry-form" className="text-text hover:text-accent font-medium transition-smooth no-underline text-sm md:text-base">
+              Contact Us
             </a>
           </nav>
 
@@ -46,18 +46,18 @@ function Header() {
               Itinerary
             </a>
             <a
-              href="#"
+              href="#inclusions-exclusions"
               className="text-text hover:text-accent font-medium transition-smooth no-underline text-base py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
-              About
+              Inc&Exc
             </a>
             <a
-              href="#"
+              href="#inquiry-form"
               className="text-text hover:text-accent font-medium transition-smooth no-underline text-base py-2"
               onClick={() => setMobileMenuOpen(false)}
             >
-              Contact
+              Contact Us
             </a>
           </nav>
         )}

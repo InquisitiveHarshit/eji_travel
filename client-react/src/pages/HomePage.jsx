@@ -47,11 +47,11 @@ function HomePage() {
           </main>
 
           <div className="sticky top-[120px] h-fit w-full self-start">
-            <InquiryForm variant="sidebar" />
+            <InquiryForm id="inquiry-form" variant="sidebar" />
           </div>
         </div>
 
-        <section className="pt-0 py-3">
+        <section id="inclusions-exclusions" className="pt-0 py-3">
           <main className="gap-0">
             <section>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary mb-6 sm:mb-8">
